@@ -1,5 +1,7 @@
 # AngularCrash
 
+Tutorial: https://www.youtube.com/watch?v=3dHNOWTI7H8
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
 
 ## Development server
