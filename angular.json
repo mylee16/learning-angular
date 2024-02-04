@@ -11,11 +11,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/angular-crash",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -46,9 +46,12 @@
               "outputHashing": "all"
             },
             "development": {
+              "buildOptimizer": false,
               "optimization": false,
+              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -57,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-crash:build:production"
+              "browserTarget": "angular-crash:build:production"
             },
             "development": {
-              "buildTarget": "angular-crash:build:development"
+              "browserTarget": "angular-crash:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "angular-crash:build"
+            "browserTarget": "angular-crash:build"
           }
         },
         "test": {
@@ -93,6 +96,6 @@
     }
   },
   "cli": {
-    "analytics": "aa28eebc-ea57-41d8-a512-6c08e43b2b16"
+    "analytics": "37397e77-7dcd-406d-8acf-ae40712985b9"
   }
 }
